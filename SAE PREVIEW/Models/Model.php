@@ -35,24 +35,29 @@ class Model
     }
 
     /**
-     * Retourne les 5 derniers etudiants
-     * @return [array] Contient les informations des prix nobel
+     * Retourne les different vue
      */
-    public function getLast()
+  
+
+    public function getPorthos()
     {
-        $req = $this->bd->prepare('SELECT * FROM etudiant ORDER BY student_id DESC LIMIT 5');
+        $req = $this->bd->prepare("SELECT * FROM `etudiant` WHERE groupe ='Porthos' ORDER BY `etudiant`. `groupe` ASC ,`nom` ASC ");
+        $req->execute();
+        return $req->fetchall();
+    }
+    public function getAthos()
+    {
+        $req = $this->bd->prepare("SELECT * FROM `etudiant` WHERE groupe ='Athos' ORDER BY `etudiant`. `groupe` ASC ,`nom` ASC ");
         $req->execute();
         return $req->fetchall();
     }
 
-
-    public function getObtenu()
+    public function getAramis()
     {
-        $req = $this->bd->prepare('SELECT * FROM etudiant WHERE stage_dentention = "1" ORDER BY student_id ');
+        $req = $this->bd->prepare("SELECT * FROM `etudiant` WHERE groupe ='Aramis' ORDER BY `etudiant`. `groupe` ASC ,`nom` ASC ");
         $req->execute();
         return $req->fetchall();
     }
-
     public function getAll()
     {
         $req = $this->bd->prepare('SELECT * FROM etudiant ORDER BY student_id');

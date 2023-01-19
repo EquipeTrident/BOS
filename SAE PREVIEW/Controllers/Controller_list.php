@@ -11,14 +11,31 @@ class Controller_list extends Controller
         $this->render("last", $data);
     }
 
-    public function action_obtenu()
+    public function action_porthos()
     {
         $m = Model::getModel();
         $data = [
-            "liste" => $m->getObtenu(),
+            "liste" => $m->getPorthos(),
         ];
-        $this->render("obtenu", $data);
+        $this->render("porthos", $data);
     }
+    public function action_athos()
+    {
+        $m = Model::getModel();
+        $data = [
+            "liste" => $m->getAthos(),
+        ];
+        $this->render("athos", $data);
+    }
+    public function action_aramis()
+    {
+        $m = Model::getModel();
+        $data = [
+            "liste" => $m->getAramis(),
+        ];
+        $this->render("aramis", $data);
+    }
+
 
     public function action_default()
     {

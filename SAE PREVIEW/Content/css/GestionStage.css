@@ -201,9 +201,10 @@ div.profilInfo a{
   color: #ffff;font: caption;font-size: 18px;
   font-weight: bold;
   list-style-type: none;
+  transition: 0.5s;
 }
 
 div.profilInfo a:hover{
-
+  text-shadow: #AE9F93 1px 0 5px;
   color: #AE9F93;
 }

@@ -8,10 +8,12 @@
 	<body>
 		<nav>
 			<ul>
-				<li><a href="?controller=list&action=last"> 5 dernier étudiants</a></li>
-				<li><a href="?controller=list&action=obtenu"> Stage Obtenu</a></li>
-				<li><a href="?controller=list&action=all"> Tout les étudiants</a></li>
-			</ul>
+			<li><a href="?controller=list&action=all"> Tout les étudiants</a></li>
+			
+				<li><a href="?controller=list&action=porthos"> Porthos</a></li>
+				<li><a href="?controller=list&action=aramis"> Aramis</a></li>
+				<li><a href="?controller=list&action=athos"> Athos</a></li>
+				
 		</nav>
 
 		<header>
