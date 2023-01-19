@@ -11,6 +11,15 @@ class Controller_list extends Controller
         $this->render("last", $data);
     }
 
+    public function action_obtenu()
+    {
+        $m = Model::getModel();
+        $data = [
+            "liste" => $m->getObtenu(),
+        ];
+        $this->render("obtenu", $data);
+    }
+
     public function action_default()
     {
         $this->action_last();
@@ -38,7 +47,7 @@ class Controller_list extends Controller
 
         if (isset($_GET["id"]) and preg_match("/^[1-9]\d*$/", $_GET["id"])) {
             $m = Model::getModel();
-            $data = $liste->getEtudiantbos($_GET["bos_id"]);
+            $data = [ "liste" => $m->getEtudiantbos($_GET["id"])];
         }
         //Si on a bien un prix nobel d'identifiant$_GET["id"]
         if ($data !== false) {
@@ -57,4 +66,3 @@ class Controller_list extends Controller
       $this->render("all", $data);
     }
 }
-?>

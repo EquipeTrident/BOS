@@ -1,0 +1,125 @@
+@font-face { font-family: "sorbonne_font"; src: url('fonts/Gascogne-Serial Regular.ttf'); }
+
+form { margin-top: 5%;
+
+    background-size: 50%;
+top: 50%;
+left: 50%;
+transform: translate(-50%;-50%);
+  border-radius: 20px;
+  padding:160px 160px;;
+  width:200px;
+  background: #263A73;
+  box-shadow:  14px 14px 49px #1d2d59,
+               -14px -14px 49px #2f478d;
+  transition: all 0.5s;
+  display: inline-block;
+   margin-left: auto;
+   margin-right: auto;
+
+}
+form:hover{transform: scale(1.05);}
+
+
+body{background-color: #263A73;
+  text-align: center;
+
+font-family: "sorbonne_font";
+
+}
+
+input.input100{  background:#263A73;
+
+border-color: white;
+border-left: 10px;
+border-top: 10px;
+border-right: 10px;
+padding-left: 12px;
+padding-right: 12px;
+padding-top: 12px;
+padding-bottom: 12px;
+color: white;
+margin-top: 10px;
+transition: 0.2s;
+}
+
+
+input.input100:focus  {
+border-color:#AE9F93;
+outline:  none;
+border-bottom-left-radius: 3px;
+}
+
+input.checkbox1{
+
+  border-color: red;
+
+}
+
+
+p{
+text-align: center;
+font: caption;
+
+color: #ffff;
+
+font-size: 20px;
+
+
+}
+
+    div.remember{
+color: #ffff;
+font-weight:100;
+
+font-style: italic;
+
+font-family:sans-serif;
+  }
+
+
+  div.form
+  {
+      display: block;
+      text-align: center;
+
+  }
+
+
+  input.log{
+  margin-top: 10px;
+  background-color: #AE9F93;
+  font-weight: bold;
+  padding: 8px;
+  padding-left: 23px;
+  padding-right: 23px;
+  color: #ffff;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 0px;
+  box-shadow: 3px;
+  transition: all 0.1s;
+
+}
+
+
+
+input.log{transform: scale(0.95);}
+
+img{
+  height: 100%;
+  width: 100%;
+}
+
+a{
+
+  color:  #ffff;
+  font-style: oblique;
+  text-decoration: none;
+  font-size: 4px;
+  transition: 0.1s;
+  font: caption;
+  margin-top: 10px;
+}
+
+a:hover{  color:  #AE9F93;}

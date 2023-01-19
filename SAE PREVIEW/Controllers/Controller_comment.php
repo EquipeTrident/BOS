@@ -1,17 +1,17 @@
 <?php
 
-class Controller_home extends Controller
+class Controller_comment extends Controller
 {
-    public function action_home()
+    public function action_enrengistrer()
     {
 
         // On récupère le modèle
         $m = Model::getModel();
         $data = [
             //On récupère le nombre d'etudiant
-            "nb" => $m->getNbEtudiant(),
+            "donnee" => $m->getNbEtudiant(),
         ];
-        $this->render("home", $data);
+        $this->render("comment", $data);
     }
 
     public function action_default()
