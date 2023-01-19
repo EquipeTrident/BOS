@@ -23,7 +23,7 @@
 <form action="?" method="post">
   <textarea id="commentaire" rows="5" cols="30">Commentaire Ici</textarea>
   <br> <br> <br>
-  <input type="submit" value="soumettre">
+  <input id="commentaire" type="submit" value="soumettre">
 </form>
 
 <?php require "view_end.php"; ?>
