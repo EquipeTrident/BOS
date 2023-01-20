@@ -25,8 +25,6 @@ class Model
 
     /**
      * Méthode permettant de récupérer un modèle car le constructeur est privé (Implémentation du Design Pattern Singleton)
-     * La fonction est une comparaison suivi d'une potentielle affectation. C'est alors une fonction constante de compléxité O(1)
-     * "La coût de cet algorithme est dite constant. Ce sera le cas de tous les algorithmes avec T(n)=a où a est un réel" : http://www.monlyceenumerique.fr/nsi_premiere/algo_a/a2_complexite.php
      */
     public static function getModel()
     {
@@ -37,9 +35,7 @@ class Model
     }
 
     /**
-     * Retourne les different vue
-     * Les fonctions ci-dessous affecte des requêtes SQL. C'est alors une fonction constante de compléxité O(1)
-     * "Le coût de cet algorithme est dite constant. Ce sera le cas de tous les algorithmes avec T(n)=a où a est un réel" : http://www.monlyceenumerique.fr/nsi_premiere/algo_a/a2_complexite.php
+     * Retour des different
      */
   
 
@@ -72,9 +68,6 @@ class Model
     /**
      * Retourne le nombre d'etudiants dans la base de données
      * @return [int]
-     * La fonction itère un tableau à chaque nouvel étudiant qu'elle recense. La fonction est alors constante et sa compléxité est O(1)
-     * "Le coût de cet algorithme est dite constant. Ce sera le cas de tous les algorithmes avec T(n)=a où a est un réel" : http://www.monlyceenumerique.fr/nsi_premiere/algo_a/a2_complexite.php
-     * 
      */
     public function getNbEtudiant()
     {
@@ -88,8 +81,6 @@ class Model
      * Retourne un tableau contenant les informations etudiants (ou false s'il n'existe pas)
      * @param [int] $id identifiant etudiant
      * @return [array ou false] Tableau contenant les infos(id, year, universite, nom, prenom) ou false
-     * Les fonctions retournent un tableau après l'ajout de chacunes des données requises. La fonction est alors constante est sa compléxité est O(1)
-     * "La coût de cet algorithme est dite constant. Ce sera le cas de tous les algorithmes avec T(n)=a où a est un réel" : http://www.monlyceenumerique.fr/nsi_premiere/algo_a/a2_complexite.php
      */
     public function getEtudiantInformations($id)
     {
@@ -101,9 +92,10 @@ class Model
 
     public function getEtudiantbos($id)
     {
-        $requete = $this->bd->prepare('Select * from etudiant left join document on etudiant.student_id = document.student_id');
+       $requete = $this->bd->prepare('Select * from document left join  bos on document.document_id and bos.document_id where student_id = :id');
+       $requete->bindValue(':id', $_GET['id']);
         $requete->execute();
-        return $requete->fetch(PDO::FETCH_ASSOC);
+        return $requete->fetchall(PDO::FETCH_ASSOC);
     }
 
     /**
@@ -111,8 +103,6 @@ class Model
      * @param [int] $offset Position de départ
      * @param [int] $limit Nombre de résultats retournés
      * @return [array] Contient les informations
-     * La fonction retourne un tableau où les informations sont itérés une par une. La fonction est alors constante et sa compléxité est de type O(1)
-     * "La coût de cet algorithme est dite constant. Ce sera le cas de tous les algorithmes avec T(n)=a où a est un réel" : http://www.monlyceenumerique.fr/nsi_premiere/algo_a/a2_complexite.php
      */
     public function getEtudiantWithLimit($offset = 0, $limit = 25)
     {
@@ -127,8 +117,6 @@ class Model
      * Retourne true si la table etudiants contient un identifiant comme le param $id, false sinon
      * @param int $id identifiant etudiants
      * @return boolean
-     * La fonction compare et renvoie un boolean. La fonction est alors constante et sa compléxité est de type O(1)
-     * "La coût de cet algorithme est dite constant. Ce sera le cas de tous les algorithmes avec T(n)=a où a est un réel" : http://www.monlyceenumerique.fr/nsi_premiere/algo_a/a2_complexite.php
      */
     public function isInDataBase($id)
     {
@@ -139,8 +127,6 @@ class Model
      * Supprime l'etudiant dont l'identifiant est $id_ed
      * @param [int] $id_ed identifiant du prix nobel à supprimer
      * @return [boolean] retourne true si la personne a été supprimée de la base de données, et false sinon
-     * La fonction réinistialise l'identifiant et ajoute un nouveau tout en retournant un boolean. La fonction est alors constante et sa compléxité est de type O(1)
-     * "La coût de cet algorithme est dite constant. Ce sera le cas de tous les algorithmes avec T(n)=a où a est un réel" : http://www.monlyceenumerique.fr/nsi_premiere/algo_a/a2_complexite.php
      */
     public function removeEtudiant($id_ed)
     {

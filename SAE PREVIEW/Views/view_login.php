@@ -9,7 +9,7 @@
 		<main>
 
        <div class="form">
-      <form action="?controller=login&action=login" method="post">
+      <form action="?controller=login&action=verif" method="post">
 
 
       <img src="Content/img/logoUniv2.png" alt="">
@@ -39,7 +39,7 @@
           if (isset($_POST['username'])) {
             foreach ($compte as $personne) {
               if($personne['username'] == $_POST['username'] && $personne['password'] == $_POST['password']){
-                  header("Location: view_home.php");
+                  header("Location: index.php");
               }
             }
           }

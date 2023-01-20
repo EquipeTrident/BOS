@@ -1,9 +1,7 @@
 <?php
+
 class Controller_list extends Controller
 {
-    /* Les fonctions ci dessous récupèrent des données d'une BD en la parcourant . C'est alors une fonction linéaire de compléxité O(n)
-    "La complexité de cet algorithme est dite linéaire. Ce sera le cas de tous les algorithmes avec T(n)an+b où a et b sont des réels." http://www.monlyceenumerique.fr/nsi_premiere/algo_a/a2_complexite.php
-    */
     public function action_last()
     {
         $m = Model::getModel();
@@ -43,10 +41,6 @@ class Controller_list extends Controller
     {
         $this->action_last();
     }
-    
-    /*La fonction en question crée un petit tableau pour vérifier l'existence d'un paramètre dans l'URL ou pour afficher un message d'erreur. Aucune boucle n'est parcouru donc la compléxité de cette fonction sera constante et de type O(1)
-    * "La coût de cet algorithme est dite constant. Ce sera le cas de tous les algorithmes avec T(n)=a où a est un réel" : http://www.monlyceenumerique.fr/nsi_premiere/algo_a/a2_complexite.php
-    */
 
     public function action_informations()
     {
@@ -64,10 +58,6 @@ class Controller_list extends Controller
         }
     }
 
-    /*La fonction en question crée un petit tableau pour vérifier l'existence d'un paramètre dans l'URL ou pour afficher un message d'erreur. Aucune boucle n'est parcouru donc la compléxité de cette fonction sera constante et de type O(1)
-    * "La coût de cet algorithme est dite constant. Ce sera le cas de tous les algorithmes avec T(n)=a où a est un réel" : http://www.monlyceenumerique.fr/nsi_premiere/algo_a/a2_complexite.php
-    */
-
     public function action_boslist()
     {
         $data = false;
@@ -83,10 +73,6 @@ class Controller_list extends Controller
             $this->action_error("pas de BOS!!!");
         }
     }
-
-     /* La fonction ci dessous récupère des données d'une BD en la parcourant . C'est alors une fonction linéaire de compléxité O(n)
-    "La complexité de cet algorithme est dite linéaire. Ce sera le cas de tous les algorithmes avec T(n)an+b où a et b sont des réels." http://www.monlyceenumerique.fr/nsi_premiere/algo_a/a2_complexite.php
-    */
 
     public function action_all()
     {
