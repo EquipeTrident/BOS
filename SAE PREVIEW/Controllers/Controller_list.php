@@ -66,7 +66,6 @@ class Controller_list extends Controller
             $m = Model::getModel();
             $data = [ "liste" => $m->getEtudiantbos($_GET["id"])];
         }
-        //Si on a bien un prix nobel d'identifiant$_GET["id"]
         if ($data !== false) {
             $this->render("bos", $data);
         } else {
