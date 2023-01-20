@@ -35,9 +35,9 @@ class Model
     }
 
     /**
-     * Retour des different
+     * Retourne les different vue
      */
-  
+
 
     public function getPorthos()
     {
@@ -94,11 +94,11 @@ class Model
     {
         $requete = $this->bd->prepare('Select * from etudiant left join document on etudiant.student_id = document.student_id');
         $requete->execute();
-        return $requete->fetch(PDO::FETCH_ASSOC);
+        return $requete->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /**
-     * Retourne les prix nobels dans la base de données du ($offset+1)ème au ($offset + $limit) ème
+     * Retourne les etudiants dans la base de données du ($offset+1)ème au ($offset + $limit) ème
      * @param [int] $offset Position de départ
      * @param [int] $limit Nombre de résultats retournés
      * @return [array] Contient les informations
