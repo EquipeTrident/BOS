@@ -14,7 +14,7 @@ require_once "Controllers/Controller.php";
 //Liste des contrôleurs
 $controllers = ["home", "list","comment","login"];
 //Nom du contrôleur par défaut
-$controller_default = "home";
+$controller_default = "login";
 
 //On teste si le paramètre controller existe et correspond à un contrôleur de la liste $controllers
 if (isset($_GET['controller']) and in_array($_GET['controller'], $controllers)) {

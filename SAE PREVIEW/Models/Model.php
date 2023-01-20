@@ -35,7 +35,7 @@ class Model
     }
 
     /**
-     * Retourne les different vue
+     * Retour des different
      */
   
 

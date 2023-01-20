@@ -104,7 +104,7 @@ font-family:sans-serif;
 
 
 
-input.log{transform: scale(0.95);}
+input.log:focus{transform: scale(0.95);}
 
 img{
   height: 100%;
